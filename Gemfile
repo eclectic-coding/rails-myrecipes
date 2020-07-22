@@ -23,7 +23,9 @@ group :development, :test do
 end
 
 group :development do
+  gem 'awesome_print'
   gem 'listen', '>= 3.0.5', '< 3.2'
+  gem 'pry-rails'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'web-console', '>= 3.3.0'
@@ -32,6 +34,11 @@ end
 group :test do
   gem 'capybara', '>= 2.15'
   gem 'chromedriver-helper'
+  gem 'guard'
+  gem 'guard-minitest'
+  gem 'minitest'
+  gem 'minitest-reporters'
+  gem 'rails-controller-testing'
   gem 'selenium-webdriver'
 end
 
