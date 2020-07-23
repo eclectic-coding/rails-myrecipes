@@ -3,6 +3,38 @@ $navbar-default-bg: #073B15;
 @import "_bootstrap-sprockets.scss";
 @import "bootstrap";
 
+body {
+  height: 100%;
+}
+
+footer {
+  margin-top: 45px;
+  padding: 10px 20px 0px 20px;
+  border-top: 1px solid #eaeaea;
+  color: #777;
+
+  a {
+    color: #555;
+
+    &:hover {
+      color: #222;
+    }
+  }
+
+  small {
+    float: left;
+  }
+
+  ul {
+    float: right;
+    list-style: none;
+
+    li {
+      float: left;
+      margin-left: 1rem;
+    }
+  }
+}
 #logo {
   float: left;
   font-size: 1.7em;
