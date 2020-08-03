@@ -40,6 +40,9 @@ class RecipesTest < ActionDispatch::IntegrationTest
     follow_redirect!
     assert_match name_of_recipe.titleize, response.body
     assert_match name_of_recipe, response.body
+    assert_select 'a[href=?]', edit_recipe_path(@recipe), text: "Edit this recipe"
+    assert_select 'a[href=?]', recipe_path(@recipe), text: "Delete this recipe"
+    assert_select 'a[href=?]', recipes_path, text: "Return to recipes listing"
   end
 
   test 'reject new valid recipe submissions' do
@@ -52,5 +55,4 @@ class RecipesTest < ActionDispatch::IntegrationTest
     assert_select 'h2.panel-title'
     assert_select 'div.panel-body'
   end
-
 end
