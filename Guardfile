@@ -1,5 +1,7 @@
+notification :libnotify, display_message: false
+
 # Defines the matching rules for Guard.
-guard :minitest, spring: "bin/rails test", all_on_start: false do
+guard :minitest, spring: 'bin/rails test', all_on_start: false do
   watch(%r{^test/(.*)/?(.*)_test\.rb$})
   watch('test/test_helper.rb') { 'test' }
   watch('config/routes.rb') { interface_tests }
@@ -39,7 +41,7 @@ end
 # Returns the integration tests corresponding to the given resource.
 def integration_tests(resource = :all)
   if resource == :all
-    Dir["test/integration/*"]
+    Dir['test/integration/*']
   else
     Dir["test/integration/#{resource}_*.rb"]
   end
@@ -47,7 +49,7 @@ end
 
 # Returns all tests that hit the interface.
 def interface_tests
-  integration_tests << "test/controllers/"
+  integration_tests << 'test/controllers/'
 end
 
 # Returns the controller tests corresponding to the given resource.
